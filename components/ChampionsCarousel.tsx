@@ -168,7 +168,7 @@ export default function ChampionsCarousel() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-black via-zinc-900 to-black overflow-hidden"
+      className="relative w-full py-16 md:py-24 px-4 md:px-8 bg-linear-to-b from-black via-zinc-900 to-black overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
@@ -186,7 +186,7 @@ export default function ChampionsCarousel() {
           Meet the fighters who trusted our nutrition coaching to reach the top. Their journeys inspire the next generation of champions.
         </p>
       </div>
-      <div ref={cardRef} className="relative flex flex-col md:flex-row items-center justify-center gap-8 bg-gradient-to-br from-zinc-900 to-black border border-orange-500/20 rounded-2xl p-8 md:p-12 shadow-2xl shadow-orange-600/10 overflow-hidden">
+      <div ref={cardRef} className="relative flex flex-col md:flex-row items-center justify-center gap-8 bg-linear-to-br from-zinc-900 to-black border border-orange-500/20 rounded-2xl p-8 md:p-12 shadow-2xl shadow-orange-600/10 overflow-hidden">
         {/* Nav buttons only on desktop */}
         {isDesktop && (
           <button onClick={prev} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-orange-600/20 hover:bg-orange-600/40 text-orange-500 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold transition-all z-10">

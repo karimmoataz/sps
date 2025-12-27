@@ -12,7 +12,7 @@ export function Modal({ trigger, title, description, open, onOpenChange }: {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
-      <DialogContent className="bg-gradient-to-br from-zinc-900 to-black border border-orange-500/30 rounded-2xl p-6 md:p-10 max-w-lg w-full shadow-2xl shadow-orange-600/20">
+      <DialogContent className="bg-linear-to-br from-zinc-900 to-black border border-orange-500/30 rounded-2xl p-6 md:p-10 max-w-lg w-full shadow-2xl shadow-orange-600/20">
         <DialogTitle asChild>
           <div className="text-2xl md:text-3xl font-bold text-orange-500 mb-2">{title}</div>
         </DialogTitle>
