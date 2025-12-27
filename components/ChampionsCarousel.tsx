@@ -2,6 +2,7 @@
 import * as React from "react";
 import { useRef, useEffect, useCallback } from "react";
 import gsap from "gsap";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const champions = [
   {
@@ -189,8 +190,8 @@ export default function ChampionsCarousel() {
       <div ref={cardRef} className="relative flex flex-col md:flex-row items-center justify-center gap-8 bg-linear-to-br from-zinc-900 to-black border border-orange-500/20 rounded-2xl p-8 md:p-12 shadow-2xl shadow-orange-600/10 overflow-hidden">
         {/* Nav buttons only on desktop */}
         {isDesktop && (
-          <button onClick={prev} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-orange-600/20 hover:bg-orange-600/40 text-orange-500 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold transition-all z-10">
-            &#8592;
+          <button onClick={prev} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-orange-600/20 hover:bg-orange-600/40 text-orange-500 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold transition-all z-10" aria-label="Previous Champion">
+            <ChevronLeft className="w-6 h-6" />
           </button>
         )}
         <div className="flex flex-col md:flex-row items-center gap-8">
@@ -206,8 +207,8 @@ export default function ChampionsCarousel() {
           </div>
         </div>
         {isDesktop && (
-          <button onClick={next} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-orange-600/20 hover:bg-orange-600/40 text-orange-500 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold transition-all z-10">
-            &#8594;
+          <button onClick={next} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-orange-600/20 hover:bg-orange-600/40 text-orange-500 rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold transition-all z-10" aria-label="Next Champion">
+            <ChevronRight className="w-6 h-6" />
           </button>
         )}
       </div>
