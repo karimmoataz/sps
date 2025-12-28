@@ -105,6 +105,15 @@ const Helmet = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+  // Track if desktop (width > 768px)
+  const [isDesktop, setIsDesktop] = React.useState(
+    typeof window !== 'undefined' ? window.innerWidth > 768 : true
+  );
+  React.useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth > 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <Canvas 
       key={canvasKey}
@@ -126,13 +135,15 @@ const Helmet = () => {
       <fog attach="fog" args={['#000000', 8, 25]} />
       <Particles />
       <AnimatedHelmetWrapper />
-      <OrbitControls 
-        enableZoom={false}
-        enablePan={false}
-        autoRotate={false}
-        minPolarAngle={Math.PI / 3}
-        maxPolarAngle={Math.PI / 1.5}
-      />
+      {isDesktop && (
+        <OrbitControls 
+          enableZoom={false}
+          enablePan={false}
+          autoRotate={false}
+          minPolarAngle={Math.PI / 3}
+          maxPolarAngle={Math.PI / 1.5}
+        />
+      )}
     </Canvas>
   )
 }

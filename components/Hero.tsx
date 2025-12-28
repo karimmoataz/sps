@@ -36,7 +36,15 @@ const Hero = () => {
           <button className="w-full sm:w-auto px-6 md:px-8 py-3 bg-orange-600 text-white rounded-xl font-bold text-base md:text-lg hover:bg-orange-700 transition-all hover:scale-105 hover:shadow-lg hover:shadow-orange-600/50">
             Book Nutrition Consult
           </button>
-          <button className="w-full sm:w-auto px-6 md:px-8 py-3 border-2 border-orange-600 text-orange-600 rounded-xl font-bold text-base md:text-lg hover:bg-orange-600 hover:text-white transition-all hover:scale-105">
+          <button
+            className="w-full sm:w-auto px-6 md:px-8 py-3 border-2 border-orange-600 text-orange-600 rounded-xl font-bold text-base md:text-lg hover:bg-orange-600 hover:text-white transition-all hover:scale-105"
+            onClick={() => {
+              const championsSection = document.getElementById('champions');
+              if (championsSection) {
+                championsSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             Fighter Success Stories
           </button>
         </div>

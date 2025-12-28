@@ -1,6 +1,8 @@
+
 import Hero from "@/components/Hero";
 import { Shield, Swords, Trophy } from "lucide-react";
 import ChampionsCarousel from "@/components/ChampionsCarousel";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -132,8 +134,14 @@ export default function Home() {
         </div>
       </section>
       {/* Our Champions Section */}
-      <ChampionsCarousel />
-      
+      <div id="champions">
+        <ChampionsCarousel />
+      </div>
+
+      {/* Contact Form Section */}
+      <section className="relative w-full py-16 md:py-24 px-4 md:px-8 bg-black/80">
+        <ContactForm />
+      </section>
     </div>
   );
 }
