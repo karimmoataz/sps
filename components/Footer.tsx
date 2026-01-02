@@ -3,7 +3,7 @@ import { Instagram, Facebook, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-black border-t border-orange-600/20 py-8 px-4 flex flex-col md:flex-row items-center justify-between gap-4 mt-12">
+    <footer className="w-full border-t border-orange-600/20 py-8 px-4 flex flex-col md:flex-row items-center justify-between gap-4 mt-12">
       <div className="text-gray-400 text-sm md:text-base">
         &copy; {new Date().getFullYear()} <span className="text-orange-500 font-bold">SPS_Fighters</span>. All rights reserved.
       </div>

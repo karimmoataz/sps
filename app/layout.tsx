@@ -25,12 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
     return (
-      <html lang="en">
+      <html>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}>
-          <DisableContextMenu>
+          {/* <DisableContextMenu> */}
             {children}
             <Footer />
-          </DisableContextMenu>
+          {/* </DisableContextMenu> */}
         </body>
       </html>
     );
