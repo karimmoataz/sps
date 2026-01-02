@@ -27,10 +27,10 @@ export default function RootLayout({
     return (
       <html>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}>
-          {/* <DisableContextMenu> */}
+          <DisableContextMenu>
             {children}
             <Footer />
-          {/* </DisableContextMenu> */}
+          </DisableContextMenu>
         </body>
       </html>
     );
