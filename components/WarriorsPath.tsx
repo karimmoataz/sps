@@ -74,18 +74,7 @@ const WarriorsPath = () => {
           });
         }
       });
-
-      // CTA button animation
-      gsap.from(ctaRef.current, {
-        scale: 0.8,
-        opacity: 0,
-        duration: 0.6,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: ctaRef.current,
-          start: "top 85%",
-        }
-      });
+      
     }, sectionRef);
 
     return () => ctx.revert();
@@ -203,13 +192,6 @@ const WarriorsPath = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Call to Action */}
-        <div ref={ctaRef} className="text-center mt-12 md:mt-16">
-          <button className="px-8 md:px-12 py-4 bg-linear-to-b from-orange-600 to-red-600 text-white rounded-xl font-bold text-base md:text-lg hover:from-orange-700 hover:to-red-700 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-600/50">
-            Start Your Journey
-          </button>
         </div>
       </div>
     </section>

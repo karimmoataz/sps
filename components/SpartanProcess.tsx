@@ -139,24 +139,6 @@ const SpartanProcess = () => {
         );
       }
 
-      // Button animation
-      if (buttonRef.current) {
-        gsap.fromTo(
-          buttonRef.current,
-          { opacity: 0, scale: 0.8 },
-          {
-            opacity: 1,
-            scale: 1,
-            duration: 0.6,
-            ease: 'back.out(1.7)',
-            scrollTrigger: {
-              trigger: buttonRef.current,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse'
-            }
-          }
-        );
-      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -197,7 +179,7 @@ const SpartanProcess = () => {
                   </p>
                 </div>
               </div>
-              <div className="step-icon relative z-10 w-16 h-16 bg-linear-to-br from-orange-600 to-red-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-600/50">
+              <div className="step-icon relative z-10 w-16 h-16 bg-linear-to-br from-orange-600 to-red-600 rounded-full flex items-center justify-center shrink-0 shadow-lg shadow-orange-600/50">
                 <span className="text-2xl">📋</span>
               </div>
               <div className="md:w-1/2 md:pl-12" />
@@ -206,7 +188,7 @@ const SpartanProcess = () => {
             {/* Step 2 */}
             <div ref={step2Ref} className="relative flex flex-col md:flex-row items-center gap-6 md:gap-8">
               <div className="md:w-1/2 md:pr-12" />
-              <div className="step-icon relative z-10 w-16 h-16 bg-linear-to-br from-red-600 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-600/50">
+              <div className="step-icon relative z-10 w-16 h-16 bg-linear-to-br from-red-600 to-orange-600 rounded-full flex items-center justify-center shrink-0 shadow-lg shadow-red-600/50">
                 <span className="text-2xl">🎯</span>
               </div>
               <div className="step-content md:w-1/2 md:pl-12">
@@ -233,7 +215,7 @@ const SpartanProcess = () => {
                   </p>
                 </div>
               </div>
-              <div className="step-icon relative z-10 w-16 h-16 bg-linear-to-br from-orange-600 to-yellow-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-600/50">
+              <div className="step-icon relative z-10 w-16 h-16 bg-linear-to-br from-orange-600 to-yellow-600 rounded-full flex items-center justify-center shrink-0 shadow-lg shadow-orange-600/50">
                 <span className="text-2xl">⚡</span>
               </div>
               <div className="md:w-1/2 md:pl-12" />
@@ -242,7 +224,7 @@ const SpartanProcess = () => {
             {/* Step 4 */}
             <div ref={step4Ref} className="relative flex flex-col md:flex-row items-center gap-6 md:gap-8">
               <div className="md:w-1/2 md:pr-12" />
-              <div className="step-icon relative z-10 w-16 h-16 bg-linear-to-br from-yellow-600 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg shadow-yellow-600/50">
+              <div className="step-icon relative z-10 w-16 h-16 bg-linear-to-br from-yellow-600 to-orange-600 rounded-full flex items-center justify-center shrink-0 shadow-lg shadow-yellow-600/50">
                 <span className="text-2xl">🏆</span>
               </div>
               <div className="step-content md:w-1/2 md:pl-12">
@@ -256,12 +238,6 @@ const SpartanProcess = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        <div ref={buttonRef} className="text-center mt-12 md:mt-16">
-          <button className="px-8 md:px-12 py-4 bg-linear-to-r from-orange-600 to-red-600 text-white rounded-xl font-bold text-base md:text-lg hover:from-orange-700 hover:to-red-700 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-orange-600/50">
-            Begin Your Transformation
-          </button>
         </div>
       </div>
     </section>

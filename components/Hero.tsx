@@ -33,7 +33,14 @@ const Hero = () => {
         </div>
 
         <div className="absolute inset-x-4 bottom-32 md:bottom-8 md:left-auto md:right-8 z-10 flex flex-col sm:flex-row gap-3 md:gap-4 pointer-events-auto">
-          <button className="w-full sm:w-auto px-6 md:px-8 py-3 bg-orange-600 text-white rounded-xl font-bold text-base md:text-lg hover:bg-orange-700 transition-all hover:scale-105 hover:shadow-lg hover:shadow-orange-600/50">
+          <button className="w-full sm:w-auto px-6 md:px-8 py-3 bg-orange-600 text-white rounded-xl font-bold text-base md:text-lg hover:bg-orange-700 transition-all hover:scale-105 hover:shadow-lg hover:shadow-orange-600/50"
+            onClick={() => {
+              const championsSection = document.getElementById('contact');
+              if (championsSection) {
+                championsSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             Book Nutrition Consult
           </button>
           <button
