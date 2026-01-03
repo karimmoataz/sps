@@ -7,7 +7,6 @@ import NutritionArsenal from "@/components/NutritionArsenal";
 import ScienceBehindShield from "@/components/ScienceBehindShield";
 import SpartanProcess from "@/components/SpartanProcess";
 import WarriorFAQ from "@/components/WarriorFAQ";
-import FloatingModels from "@/components/FloatingModels";
 
 export default function Home() {
   return (
