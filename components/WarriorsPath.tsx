@@ -24,6 +24,7 @@ const WarriorsPath = () => {
         scrollTrigger: {
           trigger: titleRef.current,
           start: "top 80%",
+          toggleActions: "restart none none reset",
         }
       });
 
@@ -45,7 +46,7 @@ const WarriorsPath = () => {
             scrollTrigger: {
               trigger: cardsRef.current,
               start: "top 80%",
-              toggleActions: "play none none none"
+              toggleActions: "restart none none reset",
             }
           }
         );
@@ -54,25 +55,54 @@ const WarriorsPath = () => {
       // Stats counter animation
       const statNumbers = statsRef.current?.querySelectorAll('.stat-number');
       statNumbers?.forEach((stat) => {
-        const target = stat.textContent?.replace(/\+/g, '') || '0';
-        const isNumber = !isNaN(parseInt(target));
-        
-        if (isNumber) {
-          gsap.from(stat, {
-            textContent: 0,
-            duration: 2,
-            ease: "power1.out",
-            snap: { textContent: 1 },
-            scrollTrigger: {
-              trigger: statsRef.current,
-              start: "top 70%",
-            },
-            onUpdate: function() {
-              const current = Math.ceil(this.targets()[0].textContent);
-              this.targets()[0].textContent = current + '+';
-            }
-          });
+        const raw = stat.textContent?.trim() || '0';
+        const isSimpleNumber = /^\d+(\+)?$/.test(raw);
+
+        if (!isSimpleNumber) {
+          return;
         }
+
+        const suffix = raw.endsWith('+') ? '+' : '';
+        const target = parseInt(raw.replace(/\D/g, ''), 10) || 0;
+
+        const resetValue = () => {
+          (stat as HTMLElement).textContent = `0${suffix}`;
+        };
+
+        const playCount = () => {
+          gsap.fromTo(
+            stat,
+            { textContent: 0 },
+            {
+              textContent: target,
+              duration: 2,
+              ease: "power1.out",
+              snap: { textContent: 1 },
+              onUpdate: function () {
+                const current = Math.ceil(Number((this.targets()[0] as HTMLElement).textContent));
+                (this.targets()[0] as HTMLElement).textContent = `${current}${suffix}`;
+              },
+              onComplete: function () {
+                (this.targets()[0] as HTMLElement).textContent = `${target}${suffix}`;
+              },
+            }
+          );
+        };
+
+        ScrollTrigger.create({
+          trigger: statsRef.current,
+          start: "top 70%",
+          onEnter: () => {
+            resetValue();
+            playCount();
+          },
+          onEnterBack: () => {
+            resetValue();
+            playCount();
+          },
+          onLeave: resetValue,
+          onLeaveBack: resetValue,
+        });
       });
       
     }, sectionRef);

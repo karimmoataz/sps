@@ -77,6 +77,7 @@ const ScienceBehindShield = () => {
         scrollTrigger: {
           trigger: titleRef.current,
           start: "top 80%",
+          toggleActions: "restart none none reset",
         }
       });
 
@@ -100,7 +101,7 @@ const ScienceBehindShield = () => {
             scrollTrigger: {
               trigger: statsRef.current,
               start: "top 80%",
-              toggleActions: "play none none none"
+              toggleActions: "restart none none reset"
             }
           }
         );
@@ -124,7 +125,7 @@ const ScienceBehindShield = () => {
             scrollTrigger: {
               trigger: featuresRef.current,
               start: "top 80%",
-              toggleActions: "play none none none"
+              toggleActions: "restart none none reset"
             }
           }
         );

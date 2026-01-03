@@ -31,7 +31,7 @@ const SpartanProcess = () => {
             scrollTrigger: {
               trigger: headerRef.current,
               start: 'top 80%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'restart none none reset'
             }
           }
         );
@@ -49,7 +49,7 @@ const SpartanProcess = () => {
             scrollTrigger: {
               trigger: lineRef.current,
               start: 'top 80%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'restart none none reset'
             }
           }
         );
@@ -70,7 +70,7 @@ const SpartanProcess = () => {
             scrollTrigger: {
               trigger: step1Ref.current,
               start: 'top 75%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'restart none none reset'
             }
           }
         );
@@ -91,7 +91,7 @@ const SpartanProcess = () => {
             scrollTrigger: {
               trigger: step2Ref.current,
               start: 'top 75%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'restart none none reset'
             }
           }
         );
@@ -112,7 +112,7 @@ const SpartanProcess = () => {
             scrollTrigger: {
               trigger: step3Ref.current,
               start: 'top 75%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'restart none none reset'
             }
           }
         );
@@ -133,7 +133,7 @@ const SpartanProcess = () => {
             scrollTrigger: {
               trigger: step4Ref.current,
               start: 'top 75%',
-              toggleActions: 'play none none reverse'
+              toggleActions: 'restart none none reset'
             }
           }
         );

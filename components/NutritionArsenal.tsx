@@ -88,6 +88,7 @@ const NutritionArsenal = () => {
         scrollTrigger: {
           trigger: titleRef.current,
           start: "top 80%",
+          toggleActions: "restart none none reset",
         }
       });
 
@@ -109,7 +110,7 @@ const NutritionArsenal = () => {
             scrollTrigger: {
               trigger: cardsRef.current,
               start: "top 80%",
-              toggleActions: "play none none none"
+              toggleActions: "restart none none reset"
             }
           }
         );

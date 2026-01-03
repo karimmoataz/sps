@@ -27,6 +27,7 @@ const WarriorFAQ = () => {
         scrollTrigger: {
           trigger: titleRef.current,
           start: "top 80%",
+          toggleActions: "restart none none reset",
         }
       });
 
@@ -48,7 +49,7 @@ const WarriorFAQ = () => {
             scrollTrigger: {
               trigger: accordionRef.current,
               start: "top 75%",
-              toggleActions: "play none none none"
+              toggleActions: "restart none none reset"
             }
           }
         );
