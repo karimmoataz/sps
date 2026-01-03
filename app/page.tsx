@@ -12,9 +12,7 @@ import FloatingModels from "@/components/FloatingModels";
 export default function Home() {
   return (
     <div className="relative w-full">
-      
-      {/* <FloatingModels /> */}
-      
+            
       <Hero />
       
       <WarriorsPath />
